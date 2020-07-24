@@ -1,6 +1,7 @@
 {
   "name": "trener-solution-react",
   "version": "0.1.0",
+  "homepage": "https://jpolstre.github.io/trener-solution-react/",
   "private": true,
   "dependencies": {
     "@nano-sql/core": "^2.3.7",
@@ -24,7 +25,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "predeploy":"yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
