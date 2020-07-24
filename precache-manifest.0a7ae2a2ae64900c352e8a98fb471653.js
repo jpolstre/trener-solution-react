@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "34f2dd08557a3d6e4729fff71d8af951",
+    "revision": "e5fbe5c358eb1f0487597a7afaf04c90",
     "url": "/trener-solution-react/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/trener-solution-react/static/js/2.f4998deb.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a5a0267f04c0a56dfd25",
-    "url": "/trener-solution-react/static/js/main.78ff1a2a.chunk.js"
+    "revision": "96ed9c002fa9acace245",
+    "url": "/trener-solution-react/static/js/main.8f59e79c.chunk.js"
   },
   {
     "revision": "c6b8363396f857e8d63d",
