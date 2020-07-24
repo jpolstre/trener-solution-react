@@ -30,7 +30,7 @@ const Layout: React.FC = () => {
 
 	return (
 		<Grid>
-			<Router>
+			<Router basename={process.env.PUBLIC_URL} >
 				<Header title={titleHeader} />
 				<Content />
 				<Tabs />
