@@ -65,7 +65,7 @@ if (appStateLocal) {
 //   return key in obj
 // }
 
-// Tomado  de: https://dev.to/kingdaro/indexing-objects-in-typescript-1cgi
+// ref: https://dev.to/kingdaro/indexing-objects-in-typescript-1cgi
 function hasOwnProperty<O extends object, K extends PropertyKey>(
   obj: O,
   key: K,

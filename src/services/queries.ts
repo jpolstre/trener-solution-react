@@ -5,8 +5,6 @@ import feriados from './feriado.json'
 import { ETypeDay } from './operations'
 
 
-
-
 export enum EQueries {
   GET_ALL = 'getAll',
   INIT_DB = 'initDataBase',
@@ -16,18 +14,17 @@ export enum EQueries {
   GET_FARE_USER = 'getFareUser'
 }
 
-
-
 export default {
   async initDataBase() {
     const dbList = nSQL().listDatabases()
     if (dbList.length <= 0) {
       await nSQL().createDatabase({
+
         id: 'TR5NR',
-        // mode: new LevelDB(path.join(__dirname, '/db'), false),
         mode: 'PERM',
         tables
       })
+      
       const rows = await nSQL('stations').query('select').exec()
       if (rows.length === 0) {
         return Promise.all([
@@ -46,9 +43,9 @@ export default {
 
         ])
       }
-      return []//queryResult en este es necesario retornar un array vacio.
+      return []
     } else {
-      return []//queryResult en este es necesario retornar un array vacio.
+      return []
     }
   },
   getAll(tableName: string) {
@@ -76,7 +73,6 @@ export default {
     return nSQL('ranges').query('select').where(
       [
         ['start', '<=', nowInCheduleFormat], 'AND', ['end', '>=', nowInCheduleFormat]
-        // [nowInCheduleFormat, '>=', 'start' ], 'AND', [nowInCheduleFormat, '<=','end' ]
       ]
     ).exec()
   },

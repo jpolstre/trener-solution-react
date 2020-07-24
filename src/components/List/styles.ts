@@ -20,8 +20,6 @@ export const Container = styled.div`
   &:last-child{
     margin-bottom: 0;
   }
-
- 
 `;
 
 

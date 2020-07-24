@@ -14,16 +14,12 @@ export const Container = styled.header`
   background-image: linear-gradient(180deg,hsla(0,0%,100%,0.3),hsla(0,0%,100%,0) 50%,rgba(0,0,0,0.12) 51%,rgba(0,0,0,0.04))!important;
 
   color: var(--text-white);
-
-  
-  
 `;
 
 export const Button = styled.button`
   border-radius: 50%;
   
   cursor: pointer;
-
 `;
 
 export const IconToggleTheme = styled(Palette)`

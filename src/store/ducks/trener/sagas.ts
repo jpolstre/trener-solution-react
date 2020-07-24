@@ -7,9 +7,7 @@ import { IItemList } from '../../../components/ItemList'
 import { getCostItemLists, getNextTimes, makeNextLabel, makeTimeTravelLabel, __EMPTY_STRING__ } from '../../../services/operations'
 
 
-
-
-// tomado de : https://stackoverflow.com/questions/48044439/using-redux-saga-with-setinterval-how-and-when-to-yield?rq=1
+// ref : https://stackoverflow.com/questions/48044439/using-redux-saga-with-setinterval-how-and-when-to-yield?rq=1
 function countdown(time: number) {
   return eventChannel(emitter => {
     const iv = setInterval(() => {
@@ -23,17 +21,12 @@ function countdown(time: number) {
   )
 }
 
-
-
-/**END OPERATIONS */
-
 const intervalCalcNexTrain = function* () {
   const { trener } = (yield select()) as AppState
   const { origin, destination, userType } = trener
 
   if (origin.time !== -1 && destination.time !== -1) {
 
-    // const nextTimes = yield call(getNextTimes, origin, destination)
     const nextTimes = (yield call(getNextTimes, origin, destination)) as { time: number }[]
 
     let nextLabel = __EMPTY_STRING__
@@ -74,16 +67,16 @@ const intervalCalcNexTrain = function* () {
 
 export function* calcResultsSaga() {
   try {
-    // getState in redux-saga?: https://stackoverflow.com/questions/38405700/getstate-in-redux-saga
-    //también te puede interesar How to get the new state with Redux-Saga?: https://stackoverflow.com/questions/57698825/how-to-get-the-new-state-with-redux-saga
+    // getState in redux-saga?, ref: https://stackoverflow.com/questions/38405700/getstate-in-redux-saga
+    //How to get the new state with Redux-Saga?, ref: https://stackoverflow.com/questions/57698825/how-to-get-the-new-state-with-redux-saga
     const { trener } = (yield select()) as AppState
     const { origin, destination, userType } = trener
 
     if (origin.time === -1 || destination.time === -1) {
       yield put(loadSuccess())
+
     } else {
       const travelTimeLabel = makeTimeTravelLabel(origin.time, destination.time)
-      // const nextTimes = yield call(getNextTimes, origin, destination)
       const nextTimes = (yield call(getNextTimes, origin, destination)) as { time: number }[]
 
       let nextLabel = __EMPTY_STRING__
@@ -130,14 +123,11 @@ export function* queryDbSaga(action: any) {
     let res, params: string = ''
     if (query === EQueries.GET_ALL) {
       params = action.params as string
-      //aqui params es name table ej: stations or users
+      //aqui params es name table ej: 'stations' or 'users'
       res = yield call(Queries[query], params)
     } else {
       res = yield call(Queries[query])
     }
-    // console.log(res);
-    // if (query === EQueries.INIT_DB) res = []
-    // yield put(loadSuccess(res))
 
     if (query === EQueries.INIT_DB) {
 
@@ -151,7 +141,7 @@ export function* queryDbSaga(action: any) {
     } else {
 
       yield all([
-        //aqui params es cualquier key del objeto INITIAL_STATE(interface StateTypes)
+        //Aquí params es cualquier key del objeto INITIAL_STATE(interface StateTypes)
         //y res el valor que se asigna 
         put(setStateValue(params, res))
       ])
