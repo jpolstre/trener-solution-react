@@ -8,7 +8,7 @@ This project is the solution to [Trener Project Challenge](https://github.com/Ni
 * nanoSQL 2
 * styled-components
 
-[Test live App](https://jpolstre.github.io/trener-solution-react/).
+[Test live App](https://admiring-jepsen-8a9818.netlify.app/), [or here](https://jpolstre.github.io/trener-solution-react/)
 
 ### `yarn start`
 
