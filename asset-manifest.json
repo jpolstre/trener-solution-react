@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/static/js/main.e81bb641.chunk.js",
-    "main.js.map": "/static/js/main.e81bb641.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.ad7cc5ba.js",
-    "runtime-main.js.map": "/static/js/runtime-main.ad7cc5ba.js.map",
-    "static/js/2.40036283.chunk.js": "/static/js/2.40036283.chunk.js",
-    "static/js/2.40036283.chunk.js.map": "/static/js/2.40036283.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.6f284210ccec916b791c35aaf40093e8.js": "/precache-manifest.6f284210ccec916b791c35aaf40093e8.js",
-    "service-worker.js": "/service-worker.js",
-    "static/js/2.40036283.chunk.js.LICENSE.txt": "/static/js/2.40036283.chunk.js.LICENSE.txt"
+    "main.js": "/trener-solution-react/static/js/main.e81bb641.chunk.js",
+    "main.js.map": "/trener-solution-react/static/js/main.e81bb641.chunk.js.map",
+    "runtime-main.js": "/trener-solution-react/static/js/runtime-main.1287bd3b.js",
+    "runtime-main.js.map": "/trener-solution-react/static/js/runtime-main.1287bd3b.js.map",
+    "static/js/2.f4998deb.chunk.js": "/trener-solution-react/static/js/2.f4998deb.chunk.js",
+    "static/js/2.f4998deb.chunk.js.map": "/trener-solution-react/static/js/2.f4998deb.chunk.js.map",
+    "index.html": "/trener-solution-react/index.html",
+    "precache-manifest.072edb061342fdff424d565d70cea606.js": "/trener-solution-react/precache-manifest.072edb061342fdff424d565d70cea606.js",
+    "service-worker.js": "/trener-solution-react/service-worker.js",
+    "static/js/2.f4998deb.chunk.js.LICENSE.txt": "/trener-solution-react/static/js/2.f4998deb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.ad7cc5ba.js",
-    "static/js/2.40036283.chunk.js",
+    "static/js/runtime-main.1287bd3b.js",
+    "static/js/2.f4998deb.chunk.js",
     "static/js/main.e81bb641.chunk.js"
   ]
 }
