@@ -14,7 +14,7 @@ const makeDateFormatDayMonth = () => {
   const today = new Date()
   const dd = String(today.getDate()).padStart(2, '0')
   const mm = String(today.getMonth() + 1).padStart(2, '0')
-  // const yyyy = today.getFullYear();
+
   return dd + '-' + mm
 }
 
@@ -31,10 +31,7 @@ export const isNowHoliday = async () => {
   return holidays.every((holiday) => holiday.fecha === now)
 }
 
-// Entrega si hoy es dia de semana
-// domingo o festivo o sabado
-// necesario por que las frecuencias de los trenes
-// cambian dependiendo del dia
+
 export const getTypeDay = async () => {
   const nowDay = new Date().toLocaleDateString('en-US', { weekday: 'long' })
   let typeDay = ETypeDay.SEMANA
@@ -46,17 +43,12 @@ export const getTypeDay = async () => {
   return typeDay
 }
 
-// Dado el origen y el destino
-// se calcula la direccion del tren
-// si va hacia Limache o Hacia Puerto
+
 export const getDirection = (origin: IStation, destination: IStation) => {
   const goesToPuerto = origin.code >= destination.code
   let direction = 'Puerto'
 
-  // Ahora hay que verificar si va a una estacion menor o igual a Sgto
-  // Aldea. Si va a una estacion superior a Stgo Aldea solo serviran los trenes hacia Limache. Si es menor sirven los trenes a Stgo Aldea o Limache.
   if (!goesToPuerto) {
-    // Obtiene todas las estaciones que solo pueden ser alcanzadas por un tren que llegue a Limache
 
     const stationsLimacheDirection = ['Peñablanca', 'Limache', 'Olmué', 'Quillota', 'La Calera', 'Limache Viejo']
 
@@ -65,23 +57,18 @@ export const getDirection = (origin: IStation, destination: IStation) => {
   return direction
 }
 
-// * = async, yield = await
 export const getNextTimes = async (origin: IStation, destination: IStation) => {
   try {
     const directionName = getDirection(origin, destination)
     const stationDirection = (await Queries[EQueries.GET_STATION_WHIT_NAME](directionName))[0] as IStation
 
-    // console.log(directionName);
-
     const typeDay = await getTypeDay()
 
     const timeFormat = makeDateFormatSchedule()
-    // console.log(timeFormat);
     let nextTimes
 
-    // En fines de semana y feriados, solo hay trenes a limache
+    
     if (directionName === 'Sargento Aldea' && typeDay === ETypeDay.SEMANA) {
-      // Si va Sargento Aldea, Sirven los trenes a Limache y Sargento Aldea
       const limache = (await Queries[EQueries.GET_STATION_WHIT_NAME]('Limache'))[0] as IStation
 
       nextTimes = await Queries[EQueries.GET_NEXT_TIMES_SCHEDULES](
@@ -129,7 +116,6 @@ export const makeNextLabel = (time: number) => {
   labelTime = `${hString}:${mString} ${type}`
 
   const dateSchedule = new Date(now.getFullYear(), now.getMonth(), now.getDate(), h, m, s)
-  // dateSchedule.setHours(h, m, s)
 
   let diff = dateSchedule.getTime() - now.getTime()
   const hh = Math.floor(diff / 1000 / 60 / 60)

@@ -11,7 +11,6 @@ export const Li = styled.li`
   padding: 15px;
   border: 1px solid  var(--gray);
   border-bottom: none;
-  /* border-radius: 15px; */
 
   font-size: 1.1rem;
 
@@ -44,8 +43,6 @@ export const IconArrowRight = styled(ChevronRight)`
 `
 
 export const Anchor = styled.a`
- /* text-decoration:underline;
- font-style:italic; */
 
 user-select: none;
  font-weight: 500;

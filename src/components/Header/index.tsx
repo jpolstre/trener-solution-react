@@ -11,7 +11,6 @@ interface Props {
 const Header: React.FC<Props> = ({ title }) => {
 	const location = useLocation()
 	const history = useHistory()
-	// history.goBack()
 	return (
 		<Container>
 			{location.pathname !== ERoutes.TRAVELS ? (

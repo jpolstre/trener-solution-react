@@ -1,14 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-
   margin-bottom: 20px;
-  
-
   min-width: 100%;
   height: 100%;
 
@@ -21,7 +14,6 @@ export const Container = styled.div`
     margin-bottom: 0;
   }
 `;
-
 
 export const Caption = styled.h3`
   margin-bottom: 6px;

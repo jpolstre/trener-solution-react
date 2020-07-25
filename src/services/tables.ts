@@ -1,7 +1,5 @@
 import { InanoSQLTableConfig } from "@nano-sql/core/lib/interfaces";
 
-
-
 export interface IHoliday {
   code: number
 

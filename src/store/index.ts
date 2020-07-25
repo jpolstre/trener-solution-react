@@ -1,7 +1,6 @@
 import { createStore, Store, compose, applyMiddleware } from 'redux'
 import rootReducer, { AppState } from './ducks/rootReducer'
 
-// for sagas.
 import createSagaMiddleware from 'redux-saga'
 import rootSaga from './ducks/rootSaga'
 const sagaMiddleware = createSagaMiddleware()

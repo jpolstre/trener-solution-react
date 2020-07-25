@@ -35,7 +35,6 @@ const Select: React.FC<Props> = ({ options, onChange, currentValue, toolBar, onK
 		[ options, filter ]
 	)
 
-	//se memoriza y solo cambia cuando se llama a la [dependencia] si no se obtiene de memoria.
 	const scrollToActive = useCallback(
 		() => {
 			const container = refSelect.current
@@ -51,7 +50,7 @@ const Select: React.FC<Props> = ({ options, onChange, currentValue, toolBar, onK
 
 			}, 10)
 		},
-		[ refSelect ]//solo cambia si cambia este valor si no se obtiene de memoria
+		[ refSelect ]
 	)
 
 	const keyboardHandler = useCallback((e:KeyboardEvent)=>{

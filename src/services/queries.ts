@@ -77,7 +77,6 @@ export default {
     ).exec()
   },
 
-  // section = tramo
   getFareUser(originSection: number, destinationSection: number, rangeCode: number, userCode: number) {
     return nSQL('fares').query('select').where(
       [

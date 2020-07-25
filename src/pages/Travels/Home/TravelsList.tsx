@@ -17,10 +17,6 @@ const Travels: React.FC = () => {
 
 	const {origin, destination, stations} = state.trener
 
-	//Uso de useRefs: https://stackoverflow.com/questions/57847594/react-hooks-accessing-up-to-date-state-from-within-a-callback
-	// NOTAS.-: useStatecausa re-render, useRef no lo hace.
-	//Otra gran diferencia es que establecer un estado es asíncrono y establecer una referencia es síncrono
-
 	const typeItemRef = useRef<string>('')
 	const titleModalRef = useRef<string>('')
 	const stationRef = useRef<string>('')

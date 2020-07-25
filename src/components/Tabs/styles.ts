@@ -8,7 +8,7 @@ export const Container = styled.footer`
   align-items: center;
 
   background-color: var(--secondary);
-  /**glossy */
+  
   background-image: linear-gradient(180deg,hsla(0,0%,100%,0.3),hsla(0,0%,100%,0) 50%,rgba(0,0,0,0.12) 51%,rgba(0,0,0,0.04))!important;
   
   color: var(--text-white);

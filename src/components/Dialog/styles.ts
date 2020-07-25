@@ -18,16 +18,27 @@ export const OverlayStyled = styled.div`
 export const ModalWrapperStyled = styled.div`
   display: inline-table;
   position: fixed;
-  padding: .5rem;
   top: 0;
-  left: 0;
+  left: 50%;
+
+  padding: .5rem;
+ 
+
+	transform: translate(-50%);
   z-index: 1050;
-  width: 100%;
+
+  width: 50%;
   height: 100%;
+
   overflow-x: hidden;
   overflow-y: auto;
+
   outline: 0;
   border-radius: .3rem;
+
+  @media (max-width: 680px) {
+    width: 100%;
+  }
 
 `;
 
@@ -55,7 +66,6 @@ export const ModalStyled = styled.div`
 
   border-radius: .3rem;
 
-  /* Animation  */
 
   animation-duration: .5s;
   animation-fill-mode: both;
@@ -79,7 +89,7 @@ export const ModalHeaderStyled = styled.div`
 
   background-color: var(--secondary);
   color: var(--white);
-  /**glossy */
+
 	background-image: linear-gradient(
 		180deg,
 		hsla(0, 0%, 100%, 0.3),
@@ -120,10 +130,6 @@ export const ModalBodyStyled = styled.div`
   min-height: 50vh;
 `;
 
-export const ModalBodyStyleStyled = styled.div`
- 
-`;
-
 export const ModalFooterStyled = styled.div`
   position: relative;
   display: flex;
@@ -139,7 +145,6 @@ export const ModalFooterStyled = styled.div`
   
   background-color: var(--secondary);
   color: var(--white);
-  /**glossy */
 	background-image: linear-gradient(
 		180deg,
 		hsla(0, 0%, 100%, 0.3),
@@ -164,12 +169,11 @@ export const ButtonStyled = styled.button<IButton>`
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.19);
 
   background-image: ${(props) =>
-      props.glossy !== undefined
-        ? 'linear-gradient(180deg,hsla(0,0%,100%,0.3),hsla(0,0%,100%,0) 50%,rgba(0,0,0,0.12) 51%,rgba(0,0,0,0.04))!important;'
-        : null};
+    props.glossy !== undefined
+      ? 'linear-gradient(180deg,hsla(0,0%,100%,0.3),hsla(0,0%,100%,0) 50%,rgba(0,0,0,0.12) 51%,rgba(0,0,0,0.04))!important;'
+      : null};
 
   opacity: 1;
-
   
   &:hover{
     opacity: 0.9;

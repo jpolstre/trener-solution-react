@@ -3,8 +3,6 @@ import { EQueries } from "../../../services/queries";
 
 export enum ActionTypes {
 
-  // LOAD_REQUEST = '@session/LOAD_REQUEST',
-
   LOAD_SUCCESS = '@session/LOAD_SUCCESS',
   LOAD_FAILURE = '@session/LOAD_FAILURE',
 
@@ -14,8 +12,6 @@ export enum ActionTypes {
 }
 
 
-// export const loadRequest = () => ({ type: ActionTypes.LOAD_REQUEST })
-// data: any
 export const loadSuccess = ( ) => ({ type: ActionTypes.LOAD_SUCCESS})
 export const loadFailure = () => ({ type: ActionTypes.LOAD_FAILURE })
 

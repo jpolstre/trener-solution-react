@@ -9,7 +9,6 @@ export const Container = styled.div`
   align-items: center;
 `
 
-
 export const SelectContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -29,7 +28,6 @@ export const SelectContainer = styled.div`
 
   ::-webkit-scrollbar-thumb {
     background-color: var(--secondary);
-    /* border-radius: 4px; */
   }
 
   ::-webkit-scrollbar-track {
@@ -58,6 +56,7 @@ export const Option = styled.div`
     background-image:linear-gradient(180deg,hsla(0,0%,100%,0.3),hsla(0,0%,100%,0) 50%,rgba(0,0,0,0.12) 51%,rgba(0,0,0,0.04))!important;
   }
 `
+
 export const ToolInfoBar = styled.div`
   padding: 5px 0;
   display: flex;
@@ -69,18 +68,16 @@ export const ToolInfoBar = styled.div`
   box-shadow: 0 1px 2px -1px var(--gray);
   
   background-color: var(--white);
-
 `
 
 
 export const InputFilter = styled.input`
-padding: 7px;
-border: 1px solid black;
-border-radius: 4px;
-font-size: 1.1rem;
+  padding: 7px;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-size: 1.1rem;
 
-width: 200px;
-
+  width: 200px;
 `
 
 export const IconClear = styled(Clear)`

@@ -6,14 +6,11 @@ import { AppState } from '../rootReducer'
 import { IItemList } from '../../../components/ItemList'
 import { getCostItemLists, getNextTimes, makeNextLabel, makeTimeTravelLabel, __EMPTY_STRING__ } from '../../../services/operations'
 
-
-// ref : https://stackoverflow.com/questions/48044439/using-redux-saga-with-setinterval-how-and-when-to-yield?rq=1
 function countdown(time: number) {
   return eventChannel(emitter => {
     const iv = setInterval(() => {
       emitter('ok')
     }, time);
-    // The subscriber must return an unsubscribe function
     return () => {
       clearInterval(iv)
     }
@@ -37,8 +34,6 @@ const intervalCalcNexTrain = function* () {
 
     if (nextLabel === __EMPTY_STRING__) {
       yield all([
-        // put(setStateValue('travelTime', __EMPTY_STRING__)),
-        // put(setStateValue('costo', __EMPTY_STRING__)),
         put(setStateValue('next', __EMPTY_STRING__)),
         put(setStateValue('nextTrains', [])),
       ])
@@ -67,8 +62,7 @@ const intervalCalcNexTrain = function* () {
 
 export function* calcResultsSaga() {
   try {
-    // getState in redux-saga?, ref: https://stackoverflow.com/questions/38405700/getstate-in-redux-saga
-    //How to get the new state with Redux-Saga?, ref: https://stackoverflow.com/questions/57698825/how-to-get-the-new-state-with-redux-saga
+    
     const { trener } = (yield select()) as AppState
     const { origin, destination, userType } = trener
 
@@ -104,7 +98,6 @@ export function* calcResultsSaga() {
 
       localStorage.setItem('appState', JSON.stringify(trener))
 
-
       const channel = yield call(countdown, 1000);
       yield takeEvery(channel, intervalCalcNexTrain);
     }
@@ -123,7 +116,7 @@ export function* queryDbSaga(action: any) {
     let res, params: string = ''
     if (query === EQueries.GET_ALL) {
       params = action.params as string
-      //aqui params es name table ej: 'stations' or 'users'
+
       res = yield call(Queries[query], params)
     } else {
       res = yield call(Queries[query])
@@ -141,8 +134,6 @@ export function* queryDbSaga(action: any) {
     } else {
 
       yield all([
-        //Aquí params es cualquier key del objeto INITIAL_STATE(interface StateTypes)
-        //y res el valor que se asigna 
         put(setStateValue(params, res))
       ])
     }

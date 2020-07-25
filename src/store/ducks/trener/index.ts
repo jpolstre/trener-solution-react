@@ -60,12 +60,6 @@ if (appStateLocal) {
   localStorage.setItem('appState', JSON.stringify(INITIAL_STATE))
 }
 
-
-// function hasKey<O>(obj: O, key: keyof any): key is keyof O {
-//   return key in obj
-// }
-
-// ref: https://dev.to/kingdaro/indexing-objects-in-typescript-1cgi
 function hasOwnProperty<O extends object, K extends PropertyKey>(
   obj: O,
   key: K,
@@ -98,7 +92,6 @@ const reducer: Reducer<StateTypes> = (state = INITIAL_STATE, action): StateTypes
 
       const keyState = action.keyState
 
-      // [keyState]: action.valueState => state[keyState] = action.valueState
       return hasOwnProperty(state, keyState) ?
         { ...state, loading: false, error: true, [keyState]: action.valueState }
         : { ...state, loading: false, error: true }

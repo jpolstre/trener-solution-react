@@ -22,7 +22,6 @@ export const Container = styled.div`
 
   ::-webkit-scrollbar-thumb {
     background-color: var(--secondary);
-    /* border-radius: 4px; */
   }
 
   ::-webkit-scrollbar-track {
